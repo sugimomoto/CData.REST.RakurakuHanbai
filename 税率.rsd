@@ -1,0 +1,48 @@
+<api:script xmlns:api="http://apiscript.com/ns?v1" xmlns:xs="http://www.cdata.com/ns/rsbscript/2" xmlns:other="http://apiscript.com/ns?v1">
+  <api:info title="税率" description="">
+    <attr name="税率ID" xs:type="int" isrequired="" readonly="false" description="null" other:xpath="税率ID" other:uri="C:\Testdata\CSV\RakurakuHanbai\100680.csv"/>
+    <attr name="消費税率(%)" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="消費税率(%)" other:uri="C:\Testdata\CSV\RakurakuHanbai\100680.csv"/>
+    <attr name="税率" xs:type="double" isrequired="" columnsize="22" precision="15" scale="0" readonly="false" description="null" other:xpath="税率" other:uri="C:\Testdata\CSV\RakurakuHanbai\100680.csv"/>
+  </api:info>
+
+  <api:set attr="uri" value="[_connection.Tenant]api/csvexport/version/v1" />
+  <api:set attr="dbSchemaId" value="100680"/>
+  <api:set attr="limit" value="10"/>
+  <api:set attr="offset" value="1"/>
+
+  <api:set attr="ContentType"    value="application/json"/>
+  <api:set attr="header:name"  value="X-HD-apitoken"/>
+  <api:set attr="header:value" value="[_connection.APIToken]"/>
+  <api:set attr="method" value="POST"/>
+
+  <api:set attr="data">
+{
+    "dbSchemaId": [dbSchemaId],
+    "limit":[limit],
+    "offset":[offset]
+}
+  </api:set>
+  <api:script method="GET">
+    <api:call op="csvproviderGet">
+      <api:push/>
+    </api:call>
+  </api:script>
+
+  <api:script method="POST">
+    <api:call op="csvproviderAdd">
+      <api:push/>
+    </api:call>
+  </api:script>
+
+  <api:script method="MERGE">
+    <api:call op="csvproviderMerge">
+      <api:push/>
+    </api:call>
+  </api:script>
+
+  <api:script method="DELETE">
+    <api:call op="csvproviderDelete">
+      <api:push/>
+    </api:call>
+  </api:script>
+</api:script>

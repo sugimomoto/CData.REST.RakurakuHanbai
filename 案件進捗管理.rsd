@@ -1,0 +1,65 @@
+<api:script xmlns:api="http://apiscript.com/ns?v1" xmlns:xs="http://www.cdata.com/ns/rsbscript/2" xmlns:other="http://apiscript.com/ns?v1">
+  <api:info title="案件進捗管理" description="">
+    <attr name="案件ID" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="案件ID" other:uri="C:\Testdata\CSV\RakurakuHanbai\100682.csv"/>
+    <attr name="確度" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="確度" other:uri="C:\Testdata\CSV\RakurakuHanbai\100682.csv"/>
+    <attr name="見込み月" xs:type="date" isrequired="" readonly="false" description="null" other:xpath="見込み月" other:uri="C:\Testdata\CSV\RakurakuHanbai\100682.csv"/>
+    <attr name="顧客No" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="顧客No" other:uri="C:\Testdata\CSV\RakurakuHanbai\100682.csv"/>
+    <attr name="顧客名" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="顧客名" other:uri="C:\Testdata\CSV\RakurakuHanbai\100682.csv"/>
+    <attr name="案件名" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="案件名" other:uri="C:\Testdata\CSV\RakurakuHanbai\100682.csv"/>
+    <attr name="案件担当者" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="案件担当者" other:uri="C:\Testdata\CSV\RakurakuHanbai\100682.csv"/>
+    <attr name="案件内容詳細" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="案件内容詳細" other:uri="C:\Testdata\CSV\RakurakuHanbai\100682.csv"/>
+    <attr name="対応日付" xs:type="date" isrequired="" readonly="false" description="null" other:xpath="対応日付" other:uri="C:\Testdata\CSV\RakurakuHanbai\100682.csv"/>
+    <attr name="記入者" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="記入者" other:uri="C:\Testdata\CSV\RakurakuHanbai\100682.csv"/>
+    <attr name="内容" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="内容" other:uri="C:\Testdata\CSV\RakurakuHanbai\100682.csv"/>
+    <attr name="登録日" xs:type="date" isrequired="" readonly="false" description="null" other:xpath="登録日" other:uri="C:\Testdata\CSV\RakurakuHanbai\100682.csv"/>
+    <attr name="初回問い合わせ日" xs:type="date" isrequired="" readonly="false" description="null" other:xpath="初回問い合わせ日" other:uri="C:\Testdata\CSV\RakurakuHanbai\100682.csv"/>
+    <attr name="現在日時" xs:type="date" isrequired="" readonly="false" description="null" other:xpath="現在日時" other:uri="C:\Testdata\CSV\RakurakuHanbai\100682.csv"/>
+    <attr name="次回アクション日選択" xs:type="int" isrequired="" readonly="false" description="null" other:xpath="次回アクション日選択" other:uri="C:\Testdata\CSV\RakurakuHanbai\100682.csv"/>
+    <attr name="（日付更新用）次回アクション日＋1ヵ月" xs:type="date" isrequired="" readonly="false" description="null" other:xpath="（日付更新用）次回アクション日＋1ヵ月" other:uri="C:\Testdata\CSV\RakurakuHanbai\100682.csv"/>
+    <attr name="失注理由" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="失注理由" other:uri="C:\Testdata\CSV\RakurakuHanbai\100682.csv"/>
+    <attr name="画像登録" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="画像登録" other:uri="C:\Testdata\CSV\RakurakuHanbai\100682.csv"/>
+  </api:info>
+
+
+  <api:set attr="uri" value="[_connection.Tenant]api/csvexport/version/v1" />
+  <api:set attr="dbSchemaId" value="100682"/>
+  <api:set attr="limit" value="10"/>
+  <api:set attr="offset" value="1"/>
+
+  <api:set attr="ContentType"    value="application/json"/>
+  <api:set attr="header:name"  value="X-HD-apitoken"/>
+  <api:set attr="header:value" value="[_connection.APIToken]"/>
+  <api:set attr="method" value="POST"/>
+
+  <api:set attr="data">
+{
+    "dbSchemaId": [dbSchemaId],
+    "limit":[limit],
+    "offset":[offset]
+}
+  </api:set>
+
+  <api:script method="GET">
+    <api:call op="csvproviderGet">
+      <api:push/>
+    </api:call>
+  </api:script>
+
+  <api:script method="POST">
+    <api:call op="csvproviderAdd">
+      <api:push/>
+    </api:call>
+  </api:script>
+
+  <api:script method="MERGE">
+    <api:call op="csvproviderMerge">
+      <api:push/>
+    </api:call>
+  </api:script>
+
+  <api:script method="DELETE">
+    <api:call op="csvproviderDelete">
+      <api:push/>
+    </api:call>
+  </api:script>
+</api:script>

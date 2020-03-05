@@ -1,0 +1,76 @@
+<api:script xmlns:api="http://apiscript.com/ns?v1" xmlns:xs="http://www.cdata.com/ns/rsbscript/2" xmlns:other="http://apiscript.com/ns?v1">
+  <api:info title="見積管理" description="">
+    <attr name="管理ID" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="管理ID" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="ステータス" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="ステータス" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="見積作成日" xs:type="date" isrequired="" readonly="false" description="null" other:xpath="見積作成日" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="担当営業" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="担当営業" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="見積書" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="見積書" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="顧客ID" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="顧客ID" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="顧客:社名" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="顧客:社名" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="顧客:担当部署" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="顧客:担当部署" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="顧客:担当者" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="顧客:担当者" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="顧客:郵便番号" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="顧客:郵便番号" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="顧客:住所" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="顧客:住所" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="顧客:掛け率" xs:type="double" isrequired="" columnsize="22" precision="15" scale="0" readonly="false" description="null" other:xpath="顧客:掛け率" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="商品ID" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="商品ID" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="区分" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="区分" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="カテゴリ" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="カテゴリ" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="品目" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="品目" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="単価" xs:type="int" isrequired="" readonly="false" description="null" other:xpath="単価" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="数量" xs:type="int" isrequired="" readonly="false" description="null" other:xpath="数量" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="数量単位" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="数量単位" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="税率ID" xs:type="int" isrequired="" readonly="false" description="null" other:xpath="税率ID" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="消費税率(%)" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="消費税率(%)" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="税率" xs:type="double" isrequired="" columnsize="22" precision="15" scale="0" readonly="false" description="null" other:xpath="税率" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="税抜金額（小計）" xs:type="int" isrequired="" readonly="false" description="null" other:xpath="税抜金額（小計）" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="消費税（小計）" xs:type="int" isrequired="" readonly="false" description="null" other:xpath="消費税（小計）" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="税込金額（小計）" xs:type="int" isrequired="" readonly="false" description="null" other:xpath="税込金額（小計）" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="税抜金額（合計）" xs:type="int" isrequired="" readonly="false" description="null" other:xpath="税抜金額（合計）" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="消費税額（合計）" xs:type="int" isrequired="" readonly="false" description="null" other:xpath="消費税額（合計）" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="税込金額（合計）" xs:type="int" isrequired="" readonly="false" description="null" other:xpath="税込金額（合計）" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="特記事項" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="特記事項" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="承認時コメント" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="承認時コメント" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+    <attr name="受注処理ステータス" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="受注処理ステータス" other:uri="C:\Testdata\CSV\RakurakuHanbai\100683.csv"/>
+  </api:info>
+
+  <api:set attr="uri" value="[_connection.Tenant]api/csvexport/version/v1" />
+  <api:set attr="dbSchemaId" value="100683"/>
+  <api:set attr="limit" value="10"/>
+  <api:set attr="offset" value="1"/>
+
+  <api:set attr="ContentType"    value="application/json"/>
+  <api:set attr="header:name"  value="X-HD-apitoken"/>
+  <api:set attr="header:value" value="[_connection.APIToken]"/>
+  <api:set attr="method" value="POST"/>
+
+  <api:set attr="data">
+{
+    "dbSchemaId": [dbSchemaId],
+    "limit":[limit],
+    "offset":[offset]
+}
+  </api:set>
+  <api:script method="GET">
+    <api:call op="csvproviderGet">
+      <api:push/>
+    </api:call>
+  </api:script>
+
+  <api:script method="POST">
+    <api:call op="csvproviderAdd">
+      <api:push/>
+    </api:call>
+  </api:script>
+
+  <api:script method="MERGE">
+    <api:call op="csvproviderMerge">
+      <api:push/>
+    </api:call>
+  </api:script>
+
+  <api:script method="DELETE">
+    <api:call op="csvproviderDelete">
+      <api:push/>
+    </api:call>
+  </api:script>
+</api:script>

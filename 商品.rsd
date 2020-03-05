@@ -1,0 +1,53 @@
+<api:script xmlns:api="http://apiscript.com/ns?v1" xmlns:xs="http://www.cdata.com/ns/rsbscript/2" xmlns:other="http://apiscript.com/ns?v1">
+  <api:info title="商品" description="">
+    <attr name="商品ID" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:uri="C:\Testdata\CSV\RakurakuHanbai\100678.csv" other:xpath="商品ID"/>
+    <attr name="区分" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:uri="C:\Testdata\CSV\RakurakuHanbai\100678.csv" other:xpath="区分"/>
+    <attr name="カテゴリ" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:uri="C:\Testdata\CSV\RakurakuHanbai\100678.csv" other:xpath="カテゴリ"/>
+    <attr name="品目" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:uri="C:\Testdata\CSV\RakurakuHanbai\100678.csv" other:xpath="品目"/>
+    <attr name="数量単位" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:uri="C:\Testdata\CSV\RakurakuHanbai\100678.csv" other:xpath="数量単位"/>
+    <attr name="単価" xs:type="int" isrequired="" readonly="false" description="null" other:uri="C:\Testdata\CSV\RakurakuHanbai\100678.csv" other:xpath="単価"/>
+    <attr name="勘定科目コード" xs:type="int" isrequired="" readonly="false" description="null" other:uri="C:\Testdata\CSV\RakurakuHanbai\100678.csv" other:xpath="勘定科目コード"/>
+    <attr name="勘定科目" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:uri="C:\Testdata\CSV\RakurakuHanbai\100678.csv" other:xpath="勘定科目"/>
+  </api:info>
+
+  <api:set attr="uri" value="[_connection.Tenant]api/csvexport/version/v1" />
+  <api:set attr="dbSchemaId" value="100678"/>
+  <api:set attr="limit" value="10"/>
+  <api:set attr="offset" value="1"/>
+
+  <api:set attr="ContentType"    value="application/json"/>
+  <api:set attr="header:name"  value="X-HD-apitoken"/>
+  <api:set attr="header:value" value="[_connection.APIToken]"/>
+  <api:set attr="method" value="POST"/>
+
+  <api:set attr="data">
+{
+    "dbSchemaId": [dbSchemaId],
+    "limit":[limit],
+    "offset":[offset]
+}
+  </api:set>
+  <api:script method="GET">
+    <api:call op="csvproviderGet">
+      <api:push/>
+    </api:call>
+  </api:script>
+
+  <api:script method="POST">
+    <api:call op="csvproviderAdd">
+      <api:push/>
+    </api:call>
+  </api:script>
+
+  <api:script method="MERGE">
+    <api:call op="csvproviderMerge">
+      <api:push/>
+    </api:call>
+  </api:script>
+
+  <api:script method="DELETE">
+    <api:call op="csvproviderDelete">
+      <api:push/>
+    </api:call>
+  </api:script>
+</api:script>
