@@ -22,7 +22,7 @@
     <attr name="確度" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="確度" other:uri="C:\Testdata\CSV\RakurakuHanbai\csvExport_20200304131313.csv"/>
     <attr name="案件名" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="案件名" other:uri="C:\Testdata\CSV\RakurakuHanbai\csvExport_20200304131313.csv"/>
     <attr name="案件担当者" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="案件担当者" other:uri="C:\Testdata\CSV\RakurakuHanbai\csvExport_20200304131313.csv"/>
-    <attr name="見込み月" xs:type="date" isrequired="" readonly="false" description="null" other:xpath="見込み月" other:uri="C:\Testdata\CSV\RakurakuHanbai\csvExport_20200304131313.csv"/>
+    <attr name="見込み月" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="見込み月" other:uri="C:\Testdata\CSV\RakurakuHanbai\csvExport_20200304131313.csv"/>
     <attr name="（検索用）案件ID" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="（検索用）案件ID" other:uri="C:\Testdata\CSV\RakurakuHanbai\csvExport_20200304131313.csv"/>
     <attr name="企業HP" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="企業HP" other:uri="C:\Testdata\CSV\RakurakuHanbai\csvExport_20200304131313.csv"/>
     <attr name="地図" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="地図" other:uri="C:\Testdata\CSV\RakurakuHanbai\csvExport_20200304131313.csv"/>
