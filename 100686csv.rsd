@@ -1,5 +1,5 @@
 <api:script xmlns:api="http://apiscript.com/ns?v1" xmlns:xs="http://www.cdata.com/ns/rsbscript/2" xmlns:other="http://apiscript.com/ns?v1">
-  <api:info title="請求管理" description="">
+  <api:info title="100686.csv" description="">
     <attr name="請求ID" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="請求ID" other:uri="C:\Testdata\CSV\RakurakuHanbai\100686.csv"/>
     <attr name="ステータス" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="ステータス" other:uri="C:\Testdata\CSV\RakurakuHanbai\100686.csv"/>
     <attr name="担当営業" xs:type="string" isrequired="" columnsize="2000" readonly="false" description="null" other:xpath="担当営業" other:uri="C:\Testdata\CSV\RakurakuHanbai\100686.csv"/>
@@ -41,27 +41,10 @@
     <attr name="未入金額" xs:type="int" isrequired="" readonly="false" description="null" other:xpath="未入金額" other:uri="C:\Testdata\CSV\RakurakuHanbai\100686.csv"/>
   </api:info>
 
-  <api:set attr="uri" value="[_connection.Tenant]api/csvexport/version/v1" />
-  <api:set attr="dbSchemaId" value="100686"/>
-  <api:set attr="EnablePaging" value="TRUE" />
-  <api:set attr="limit" value="200"/>
-  <api:set attr="offset" value="[rows@next | def('1')]" />
+  <api:set attr="uri" value="C:\\Testdata\\CSV\\RakurakuHanbai\\100686.csv" />
 
-  <api:set attr="ContentType"    value="application/json"/>
-  <api:set attr="header:name"  value="X-HD-apitoken"/>
-  <api:set attr="header:value" value="[_connection.APIToken]"/>
-  <api:set attr="method" value="POST"/>
-
-  <api:set attr="data">
-{
-    "dbSchemaId": [dbSchemaId],
-    "limit":[limit],
-    "offset":[offset]
-}
-  </api:set>
   <api:script method="GET">
     <api:call op="csvproviderGet">
-      <api:set attr="rows@next" value="[offset | add([limit])]" />
       <api:push/>
     </api:call>
   </api:script>

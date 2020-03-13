@@ -10,8 +10,9 @@
 
   <api:set attr="uri" value="[_connection.Tenant]api/csvexport/version/v1" />
   <api:set attr="dbSchemaId" value="100697"/>
-  <api:set attr="limit" value="10"/>
-  <api:set attr="offset" value="1"/>
+  <api:set attr="EnablePaging" value="TRUE" />
+  <api:set attr="limit" value="200"/>
+  <api:set attr="offset" value="[rows@next | def('1')]" />
 
   <api:set attr="ContentType"    value="application/json"/>
   <api:set attr="header:name"  value="X-HD-apitoken"/>
@@ -27,6 +28,7 @@
   </api:set>
   <api:script method="GET">
     <api:call op="csvproviderGet">
+      <api:set attr="rows@next" value="[offset | add([limit])]" />
       <api:push/>
     </api:call>
   </api:script>
